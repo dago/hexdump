@@ -1,10 +1,10 @@
 Name: hex
-Version: 1.3
+Version: 1.4
 Release: 1
 Summary: yet another hex dumper
-URL: http://www.tuxedo.org/~esr/hex/
+URL: http://www.catb.org/~esr/hex/
 Source0: %{name}-%{version}.tar.gz
-Copyright: BSD-like
+License: BSD-like
 Group: Development/Tools
 
 %%description 

@@ -97,7 +97,7 @@ Network Architecture (SNA).</para> </refsect1>
 
 <refsect1 id='author'><title>AUTHOR</title> <para>Eric S. Raymond
 &lt;esr@thyrsus.com&gt;.  See my home page at <ulink
-url='http://www.tuxedo.org/~esr'>http://www.tuxedo.org/~esr</ulink>
+url='http://www.catb.org/~esr'>http://www.catb.org/~esr</ulink>
 for updates and related resources.</para> 
 </refsect1> 
 </refentry>

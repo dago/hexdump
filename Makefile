@@ -1,7 +1,7 @@
 # Makefile for Eric Raymond's silly hex dumper
 
 # Note: When the version changes, you also have to change the RPM spec file
-VERS=1.3
+VERS=1.4
 
 hex: hex.c
 	$(CC) -DRELEASE=\"$(VERS)\" -O hex.c -o hex
@@ -30,7 +30,7 @@ clean:
 dist: hex-$(VERS).tar.gz
 
 RPMROOT=/usr/src/redhat
-RPM = rpm
+RPM = rpmbuild
 RPMFLAGS = -ba
 rpm: dist
 	cp hex-$(VERS).tar.gz $(RPMROOT)/SOURCES;
