@@ -6,7 +6,7 @@ VERS=1.3
 hex: hex.c
 	$(CC) -DRELEASE=\"$(VERS)\" -O hex.c -o hex
 
-SOURCES = READ.ME Makefile hex.c hex.xml hex.lsm hex.spec
+SOURCES = READ.ME Makefile hex.c hex.xml hex.spec
 
 hex-$(VERS).tar.gz: $(SOURCES) hex.1 
 	@ls $(SOURCES) hex.1 | sed s:^:hex-$(VERS)/: >MANIFEST

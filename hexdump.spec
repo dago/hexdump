@@ -2,12 +2,15 @@ Name: hex
 Version: 1.3
 Release: 1
 Summary: yet another hex dumper
-Source: http://www.tuxedo.org/~esr/hex-1.3.tar.gz
+URL: http://www.tuxedo.org/~esr/hex/
+Source0: %{name}-%{version}.tar.gz
 Copyright: BSD-like
 Group: Development/Tools
 
 %%description 
-Hex dumper that does CP/M format and EBCDIC; has internationalization.
+Yes, it's yet another hex dumper.  This one produces a nice CP/M-like
+format by default and can do EBCDIC.  It's internationalized, too.
+Has many nifty formatting functions.
 
 %prep
 %setup
