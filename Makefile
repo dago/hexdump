@@ -3,16 +3,16 @@
 # Note: When the version changes, you also have to change
 #  * the name of the containing directory
 #  * the RPM spec file
-V=1.0
+VERS=1.1
 
 hex: hex.c
 
 SOURCES = READ.ME Makefile hex.c hex.1 hex.lsm hex.spec
 
-hex.tar: $(SOURCES)
-	(cd ..; tar -cvf hex-$(V)/hex.tar `echo $(SOURCES) | sed "/\(^\| \)/s// hex-$(V)\//g"`)
-hex.tar.gz: hex.tar
-	gzip -f hex.tar
+hex-$(VERS).tar: $(SOURCES)
+	tar --name-prefix "hex-$(VERS)/" -cvf hex-$(VERS).tar $(SOURCES)
+hex-$(VERS).tar.gz: hex-$(VERS).tar
+	gzip -f hex-$(VERS).tar
 
 hex.shar: $(SOURCES)
 	shar $(SOURCES) >hex.shar
@@ -22,6 +22,6 @@ clean:
 
 TOPDIR=/usr/src/rpm
 rpm: hex.tar.gz
-	cp hex.tar.gz $(TOPDIR)/SOURCES/hex-$(V).tar.gz
-	cp hex.spec $(TOPDIR)/SPECS/hex-$(V)-1.spec
-	rpm -ba hex-$(V)-1.spec
+	cp hex.tar.gz $(TOPDIR)/SOURCES/hex-$(VERS).tar.gz
+	cp hex.spec $(TOPDIR)/SPECS/hex-$(VERS)-1.spec
+	rpm -ba hex-$(VERS)-1.spec

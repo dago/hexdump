@@ -42,4 +42,4 @@ The definition of EBCDIC used is IBM's ASCII-compatible 96-character
 SCS set used with Systems Network Architecture (SNA).
 .SH AUTHOR
 Eric S. Raymond <esr@snark.thyrsus.com>.  See my home page at
-http://www.ccil.org/~esr/home.html for updates and other resources.
+http://www.tuxedo.org/~esr for updates and other resources.

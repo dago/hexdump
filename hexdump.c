@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <locale.h>
 
 #define DEFWIDTH 16		/* Default # chars to show per line */
 #define MAXWIDTH 32		/* Maximum # of bytes per line	*/
@@ -192,6 +193,8 @@ char *argv[];
     FILE    *infile;	    /* file pointer input file */
     int	    dumpcount = 0;  /* count of files dumped so far */
     char    *cp;
+
+    setlocale (LC_CTYPE, "");
 
     for (argv++, argc--; argc > 0; argv++, argc--)
     {
