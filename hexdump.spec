@@ -16,10 +16,8 @@ Hex dumper that does CP/M format and EBCDIC; has internationalization.
 make
 
 %install
-rm -f /usr/bin/hex
-cp hex /usr/bin
-cp hex.1 /usr/man/man1/hex.1
+make install
 
 %files
-/usr/man/man1/hex.1
+/usr/share/man/man1/hex.1
 /usr/bin/hex
