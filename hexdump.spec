@@ -1,8 +1,8 @@
-Name: hex
-Version: %{nyversion}
+Name: hexdump
+Version: %{myversion}
 Release: 1
 Summary: yet another hex dumper
-URL: http://www.catb.org/~esr/hex/
+URL: http://www.catb.org/~esr/hexdump/
 Source0: %{name}-%{version}.tar.gz
 License: BSD-like
 Group: Development/Tools
@@ -24,5 +24,5 @@ make install
 
 %files
 %doc README COPYING
-/usr/share/man/man1/hex.1
-/usr/bin/hex
+/usr/share/man/man1/hexdump.1
+/usr/bin/hexdump

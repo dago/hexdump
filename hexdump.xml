@@ -95,7 +95,7 @@ used is IBM's ASCII-compatible 96-character SCS set used with Systems
 Network Architecture (SNA).</para> </refsect1>
 
 <refsect1 id='author'><title>AUTHOR</title> <para>Eric S. Raymond
-<email>esr@thyrsus.com<email>.  See my home page at <ulink
+<email>esr@thyrsus.com</email>.  See my home page at <ulink
 url='http://www.catb.org/~esr'>http://www.catb.org/~esr</ulink>
 for updates and related resources.</para> 
 </refsect1> 
