@@ -1,8 +1,8 @@
 Name: hex
-Version: 1.2
+Version: 1.3
 Release: 1
 Summary: yet another hex dumper
-Source: locke.ccil.org:/pub/esr/hex-1.2.tar.gz
+Source: http://www.tuxedo.org/~esr/hex-1.3.tar.gz
 Copyright: BSD-like
 Group: Development/Tools
 

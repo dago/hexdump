@@ -1,7 +1,7 @@
 # Makefile for Eric Raymond's silly hex dumper
 
 # Note: When the version changes, you also have to change the RPM spec file
-VERS=1.2
+VERS=1.3
 
 hex: hex.c
 	$(CC) -DVERSION=\"$(VERS)\" -O hex.c -o hex
