@@ -8,8 +8,8 @@ hex: hex.c
 
 SOURCES = READ.ME Makefile hex.c hex.xml hex.lsm hex.spec
 
-hex-$(VERS).tar.gz: $(SRC) hex.1 
-	@ls $(SRC) hex.1 | sed s:^:hex-$(VERS)/: >MANIFEST
+hex-$(VERS).tar.gz: $(SOURCES) hex.1 
+	@ls $(SOURCES) hex.1 | sed s:^:hex-$(VERS)/: >MANIFEST
 	@(cd ..; ln -s hex hex-$(VERS))
 	(cd ..; tar -czvf hex/hex-$(VERS).tar.gz `cat hex/MANIFEST`)
 	@(cd ..; rm hex-$(VERS))
@@ -23,7 +23,6 @@ install: hex.1 uninstall
 
 uninstall:
 	rm -f /usr/bin/hex /usr/share/man/man1/hex.
-	rm -f hex.1 manpage.links manpage.refs
 
 clean:
 	rm -f hex hex-$(VERS).tar.gz *.rpm
