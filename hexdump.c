@@ -232,7 +232,7 @@ char *argv[];
 	    switch (c)
 	    {
 	    case 'V':
-		printf("hex " VERSION " by Eric S. Raymond.\n");
+		printf("hex " RELEASE " by Eric S. Raymond.\n");
 		exit(0);
 
 	    case 'e': eflag = (s == '-'); continue;

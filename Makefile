@@ -4,7 +4,7 @@
 VERS=1.3
 
 hex: hex.c
-	$(CC) -DVERSION=\"$(VERS)\" -O hex.c -o hex
+	$(CC) -DRELEASE=\"$(VERS)\" -O hex.c -o hex
 
 SOURCES = READ.ME Makefile hex.c hex.xml hex.lsm hex.spec
 
