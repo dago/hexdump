@@ -20,8 +20,10 @@ hex.shar: $(SOURCES)
 clean:
 	rm -f hex hex.tar hex.shar
 
-TOPDIR=/usr/src/rpm
-rpm: hex.tar.gz
-	cp hex.tar.gz $(TOPDIR)/SOURCES/hex-$(VERS).tar.gz
-	cp hex.spec $(TOPDIR)/SPECS/hex-$(VERS)-1.spec
-	rpm -ba hex-$(VERS)-1.spec
+RPMROOT=/usr/src/redhat
+RPM = rpm
+RPMFLAGS = -ba
+rpm: hex-$(VERS).tar.gz
+	cp hex-$(VERS).tar.gz $(RPMROOT)/SOURCES/hex-$(VERS).tar.gz
+	cp hex.spec $(RPMROOT)/SPECS/hex.spec
+	$(RPM) $(RPMFLAGS) hex.spec
