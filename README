@@ -1,5 +1,5 @@
 				HEX 1.2
-		(by Eric S. Raymond <esr@snark.thyrsus.com>)
+		(by Eric S. Raymond <esr@thyrsus.com>)
 
 This hex dumper was born because
 
@@ -10,7 +10,8 @@ This hex dumper was born because
 
 If any of these describes your universe, you'll like it too. The format
 resembles a CP/M or MS/DOS DEBUG dump screen. There is nothing UNIX-specific
-in the source, it should work OK under any C with a stdio.h library.
+in the source, it should work OK under any C with a stdio.h library. And,
+in fact, I'm told it has been used under Windows NT.
 
 You can find updates and other resources at:
 

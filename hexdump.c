@@ -288,7 +288,7 @@ char *argv[];
 		exit(0);
 	    }
 	}
-	else if ((infile = fopen(*argv, "r")) == NULL)
+	else if ((infile = fopen(*argv, "rb")) == NULL)
 	{
 	    (void) fprintf(stderr, "hex: cannot open %s\n", *argv);
 	    exit(1);

@@ -31,7 +31,8 @@ may have them immediately following the option letter or whitespace-separated.
 .PP
 If the command-line arguments include two or more filenames (with -
 being regarded as a `filename' for standard input), hex will emit a
-one-line header giving the name the file in front of each input file.
+one-line header giving the name of 
+the file in front of each input file.
 .PP
 The -s option expects a start offset, optionally followed by a
 comma-separated count. Each of these should be a decimal or hex integer
@@ -43,5 +44,7 @@ in the style of an -s option argument. Odd widths turn on the -g option.
 The definition of EBCDIC used is IBM's ASCII-compatible 96-character
 SCS set used with Systems Network Architecture (SNA).
 .SH AUTHOR
-Eric S. Raymond <esr@snark.thyrsus.com>.  See my home page at
-http://www.tuxedo.org/~esr for updates and other resources.
+Eric S. Raymond <esr@thyrsus.com>.  See my home page at
+http://www.tuxedo.org/~esr for updates and related resources.
+
+
