@@ -9,7 +9,7 @@
 <refmiscinfo class='date'>Oct 27, 1987</refmiscinfo>
 </refmeta>
 <refnamediv id='name'>
-<refname>hex.c</refname>
+<refname>hex</refname>
 <refpurpose>dump a file to stdout in CP/M-like hex format</refpurpose>
 </refnamediv>
 <refsynopsisdiv id='synopsis'>
