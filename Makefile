@@ -1,6 +1,6 @@
 # Makefile for Eric Raymond's silly hex dumper
 
-VERS=1.5
+VERS=$(shell sed <hexdump.spec -n -e '/Version: \(.*\)/s//\1/p')
 
 hexdump: hexdump.c
 	$(CC) -DRELEASE=\"$(VERS)\" -O hexdump.c -o hexdump
@@ -28,8 +28,3 @@ clean:
 
 dist: hexdump-$(VERS).tar.gz
 
-RPMROOT=/usr/src/redhat
-rpm: dist
-	rpmbuild --define 'myversion $(VERS)' -ta hexdump-$(VERS).tar.gz
-	cp $(RPMROOT)/RPMS/*/hexdump-$(VERS)*.rpm .
-	cp $(RPMROOT)/SRPMS/hexdump-$(VERS)*.src.rpm .
