@@ -2,8 +2,7 @@
 
 #include <stdio.h>
 #include <ctype.h>
-
-extern char *strchr();
+#include <string.h>
 
 #define DEFWIDTH 16		/* Default # chars to show per line */
 #define MAXWIDTH 32		/* Maximum # of bytes per line	*/
