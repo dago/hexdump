@@ -2,7 +2,7 @@
 .SH NAME
 hex.c \- dump a file to stdout in CP/M-like hex format
 .SH SYNOPSIS
-.B hex [-w] [-e] [-c] [-g] [-s] [filename...]
+.B hex [-V] [-w] [-e] [-c] [-g] [-s] [filename...]
 .SH DESCRIPTION
 This program provides a facility for obtaining a dump of a binary file
 to stdout.  The default format is a CP/M style hex dump with byte
@@ -21,6 +21,8 @@ The program accepts the following options to control its output:
 -g -- don't output mid-page gutter
 .TP 10
 -s -- dump file section
+.TP 10
+-V -- print version number and exit
 .PP
 The command line is scanned left-to-right for filenames and options, and
 each file dumped according to the format defined by preceding options. To
