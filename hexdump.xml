@@ -37,33 +37,33 @@ standard input.</para>
 <variablelist remap='TP'>
 <varlistentry>
 <term>-w</term>
-<listentry>
+<listitem>
 <para>set # of bytes dumped per line (default is 16)</para>
-</listentry>
+</listitem>
 </varlistentry>
 <varlistentry>
 <term>-e</term>
-<listentry>
+<listitem>
 <para>display EBCDIC character assignments rather than ASCII</para>
-</listentry>
+</listitem>
 </varlistentry>
 <varlistentry>
 <term>-c</term>
-<listentry>
+<listitem>
 <para>display printable characters as text in-line</para>
-</listentry>
+</listitem>
 </varlistentry>
 <varlistentry>
 <term>-g</term>
-<listentry><para>don't output mid-page gutter</para></listentry>
+<listitem><para>don't output mid-page gutter</para></listitem>
 </varlistentry>
 <varlistentry>
 <term>-s</term>
-<listentry><para>dump file section</para></listentry>
+<listitem><para>dump file section</para></listitem>
 </varlistentry>
 <varlistentry>
 <term>--V</term>
-<listentry><para>print version number and exit</para></listentry>
+<listitem><para>print version number and exit</para></listitem>
 </varlistentry>
 </variablelist>
 
