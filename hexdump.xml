@@ -1,14 +1,14 @@
 .TH HEX 1 "Oct 27, 1987"
 .SH NAME
-hex.c \- dump a file to stdout in hex format
+hex.c \- dump a file to stdout in CP/M-like hex format
 .SH SYNOPSIS
 .B hex [-w] [-e] [-c] [-g] [-s] [filename...]
 .SH DESCRIPTION
-This program provides a facility for obtaining a dump of a file to stdout.
-The default format is a CP/M style hex dump with byte offset in file, 16 bytes
-of hex and 16 bytes of alpha representation with '.' for non-printables per
-line. If no filename is given, hex assumes that it is acting as a filter on
-stdin.
+This program provides a facility for obtaining a dump of a binary file
+to stdout.  The default format is a CP/M style hex dump with byte
+offset in file, 16 bytes of hex and 16 bytes of alpha representation
+with '.' for non-printables per line. If no filename is given, hex
+reads from standard input.
 .PP
 The program accepts the following options to control its output:
 .TP 10
