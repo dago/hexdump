@@ -1,0 +1,44 @@
+.TH HEX 1 "Oct 27, 1987"
+.SH NAME
+hex.c \- dump a file to stdout in hex format
+.SH SYNOPSIS
+.B hex [-w] [-e] [-c] [-g] [-s] [filename...]
+.SH DESCRIPTION
+This program provides a facility for obtaining a dump of a file to stdout.
+The default format is a CP/M style hex dump with byte offset in file, 16 bytes
+of hex and 16 bytes of alpha representation with '.' for non-printables per
+line. If no filename is given, hex assumes that it is acting as a filter on
+stdin.
+.PP
+The program accepts the following options to control its output:
+.TP 10
+-w -- set # of bytes dumped per line (default is 16)
+.TP 10
+-e -- display EBCDIC character assignments rather than ASCII
+.TP 10
+-c -- display printable characters as text in-line
+.TP 10
+-g -- don't output mid-page gutter
+.TP 10
+-s -- dump file section
+.PP
+The command line is scanned left-to-right for filenames and options, and
+each file dumped according to the format defined by preceding options. To
+turn off an option, precede the letter with a +. Options that take arguments
+may have them immediately following the option letter or whitespace-separated.
+.PP
+If the command-line arguments include two or more filenames (with -
+being regarded as a `filename' for standard input), hex will emit a
+one-line header giving the name the file in front of each input file.
+.PP
+The -s option expects a start offset, optionally followed by a
+comma-separated count. Each of these should be a decimal or hex integer
+(hex must be prefixed by x or h; leading zeros will be ignored).
+.PP
+The -w option expects a width, formatted as a single decimal or hex number
+in the style of an -s option argument. Odd widths turn on the -g option.
+.SH NOTE
+The definition of EBCDIC used is IBM's ASCII-compatible 96-character
+SCS set used with Systems Network Architecture (SNA).
+.SH AUTHOR
+Eric S. Raymond <esr@snark.thyrsus.com>

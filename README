@@ -1,0 +1,10 @@
+This hex dumper was born because
+
+	a) od octal format is appallingly ugly
+	b) od -x ain't much better
+	c) I needed to dump EBCDIC files from SNA sessions
+	d) I needed to dump single blocks of files
+
+If any of these describes your universe, you'll like it too. The format
+resembles a CP/M or MS/DOS DEBUG dump screen. There is nothing UNIX-specific
+in the source, it should work OK under any C with a stdio.h library.
