@@ -5,7 +5,7 @@ VERS=1.5
 hexdump: hexdump.c
 	$(CC) -DRELEASE=\"$(VERS)\" -O hexdump.c -o hexdump
 
-SOURCES = READ.ME COPYING Makefile hexdump.c hexdump.xml hexdump.spec
+SOURCES = README COPYING Makefile hexdump.c hexdump.xml hexdump.spec
 
 hexdump-$(VERS).tar.gz: $(SOURCES) hexdump.1 
 	@ls $(SOURCES) hexdump.1 | sed s:^:hexdump-$(VERS)/: >MANIFEST

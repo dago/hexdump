@@ -1,4 +1,4 @@
-				HEX
+				HEXDUMP
 		(by Eric S. Raymond <esr@thyrsus.com>)
 
 This hex dumper was born because
@@ -17,7 +17,7 @@ I wrote the original of this in 1983.  I'm not certain, but I think it
 may have been my very first C program, and I believe it was the first
 code I wrote under Unix (4.1BSD on a Vax).  It's certainly the oldest
 piece of C code I wrote that I still have source for.  It has held
-up remarkably well.
+up remarkably well.  For many years it was just `hex'.
 
 You can find updates and other resources at:
 
