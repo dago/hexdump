@@ -41,4 +41,5 @@ in the style of an -s option argument. Odd widths turn on the -g option.
 The definition of EBCDIC used is IBM's ASCII-compatible 96-character
 SCS set used with Systems Network Architecture (SNA).
 .SH AUTHOR
-Eric S. Raymond <esr@snark.thyrsus.com>
+Eric S. Raymond <esr@snark.thyrsus.com>.  See my home page at
+http://www.thyrsus.com/~esr/home.html for updates and other resources.
