@@ -2,21 +2,20 @@
 <!DOCTYPE refentry PUBLIC 
    "-//OASIS//DTD DocBook XML V4.1.2//EN"
    "docbook/docbookx.dtd">
-<refentry id='hex.1'>
+<refentry id='hexdump.1'>
 <refmeta>
-<refentrytitle>hex</refentrytitle>
+<refentrytitle>hexdump</refentrytitle>
 <manvolnum>1</manvolnum>
 <refmiscinfo class='date'>Oct 27, 1987</refmiscinfo>
 </refmeta>
 <refnamediv id='name'>
-<refname>hex</refname>
-<refpurpose>dump a file to stdout in CP/M-like hex format</refpurpose>
+<refname>hexdump</refname>
+<refpurpose>dump a file to stdout in CP/M-like hexadecimal format</refpurpose>
 </refnamediv>
 <refsynopsisdiv id='synopsis'>
 
 <cmdsynopsis>
-  <!--  hex  [-V] [-w] [-e] [-c] [-g] [-s] [filename...] -->
-  <command>hex</command>  <arg choice='opt'>-V </arg>
+  <command>hexdump</command>  <arg choice='opt'>-V </arg>
   <arg choice='opt'>-w </arg>
   <arg choice='opt'>-e </arg>
   <arg choice='opt'>-c </arg>
@@ -31,7 +30,7 @@
 
 <para>This program provides a facility for obtaining a dump of a
 binary file to stdout.  The default format is a CP/M style
-<command>hex</command> dump with byte offset in file, 16 bytes of
+haxadecimal dump with byte offset in file, 16 bytes of
 <command>hex</command> and 16 bytes of alpha representation with '.'
 for non-printables per line. If no filename is given, hex reads from
 standard input.</para>
@@ -78,16 +77,16 @@ option letter or whitespace-separated.</para>
 
 <para>If the command-line arguments include two or more filenames
 (with - being regarded as a `filename' for standard input),
-<command>hex</command> will emit a one-line header giving the name of
+<command>hexdump</command> will emit a one-line header giving the name of
 the file in front of each input file.</para>
 
 <para>The <option>-s</option> option expects a start offset,
 optionally followed by a comma-separated count. Each of these should
-be a decimal or <command>hex</command> integer (hex must be prefixed
+be a decimal or hexadecimal integer (hexadecimal must be prefixed
 by x or h; leading zeros will be ignored).</para>
 
 <para>The <option>-w</option> option expects a width, formatted as a
-single decimal or <command>hex</command> number in the style of an
+single decimal or haxadecimal number in the style of an
 <option>-s</option> option argument. Odd widths turn on the
 <option>-g</option> option.</para> </refsect1>
 
@@ -96,7 +95,7 @@ used is IBM's ASCII-compatible 96-character SCS set used with Systems
 Network Architecture (SNA).</para> </refsect1>
 
 <refsect1 id='author'><title>AUTHOR</title> <para>Eric S. Raymond
-&lt;esr@thyrsus.com&gt;.  See my home page at <ulink
+<email>esr@thyrsus.com<email>.  See my home page at <ulink
 url='http://www.catb.org/~esr'>http://www.catb.org/~esr</ulink>
 for updates and related resources.</para> 
 </refsect1> 

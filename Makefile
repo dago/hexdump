@@ -1,40 +1,35 @@
 # Makefile for Eric Raymond's silly hex dumper
 
-# Note: When the version changes, you also have to change the RPM spec file
-VERS=1.4
+VERS=1.5
 
-hex: hex.c
-	$(CC) -DRELEASE=\"$(VERS)\" -O hex.c -o hex
+hexdump: hexdump.c
+	$(CC) -DRELEASE=\"$(VERS)\" -O hexdump.c -o hexdump
 
-SOURCES = READ.ME Makefile hex.c hex.xml hex.spec
+SOURCES = READ.ME COPYING Makefile hexdump.c hexdump.xml hexdump.spec
 
-hex-$(VERS).tar.gz: $(SOURCES) hex.1 
-	@ls $(SOURCES) hex.1 | sed s:^:hex-$(VERS)/: >MANIFEST
-	@(cd ..; ln -s hex hex-$(VERS))
-	(cd ..; tar -czvf hex/hex-$(VERS).tar.gz `cat hex/MANIFEST`)
-	@(cd ..; rm hex-$(VERS))
+hexdump-$(VERS).tar.gz: $(SOURCES) hexdump.1 
+	@ls $(SOURCES) hexdump.1 | sed s:^:hexdump-$(VERS)/: >MANIFEST
+	@(cd ..; ln -s hexdump hexdump-$(VERS))
+	(cd ..; tar -czvf hexdump/hexdump-$(VERS).tar.gz `cat hexdump/MANIFEST`)
+	@(cd ..; rm hexdump-$(VERS))
 
-hex.1: hex.xml
-	xmlto man hex.xml
+hexdump.1: hexdump.xml
+	xmlto man hexdump.xml
 
-install: hex.1 uninstall
-	cp hex /usr/bin
-	cp hex.1 /usr/share/man/man1/hex.1
+install: hexdump.1 uninstall
+	cp hexdump /usr/bin
+	cp hexdump.1 /usr/share/man/man1/hexdump.1
 
 uninstall:
-	rm -f /usr/bin/hex /usr/share/man/man1/hex.
+	rm -f /usr/bin/hexdump /usr/share/man/man1/hexdump.
 
 clean:
-	rm -f hex hex-$(VERS).tar.gz *.rpm
+	rm -f hexdump hexdump-$(VERS).tar.gz *.rpm
 
-dist: hex-$(VERS).tar.gz
+dist: hexdump-$(VERS).tar.gz
 
 RPMROOT=/usr/src/redhat
-RPM = rpmbuild
-RPMFLAGS = -ba
 rpm: dist
-	cp hex-$(VERS).tar.gz $(RPMROOT)/SOURCES;
-	cp hex.spec $(RPMROOT)/SPECS
-	cd $(RPMROOT)/SPECS; $(RPM) $(RPMFLAGS) hex.spec	
-	cp $(RPMROOT)/RPMS/`arch|sed 's/i[4-9]86/i386/'`/hex-$(VERS)*.rpm .
-	cp $(RPMROOT)/SRPMS/hex-$(VERS)*.src.rpm .
+	rpmbuild --define 'myversion $(VERS)' -ta hexdump-$(VERS).tar.gz
+	cp $(RPMROOT)/RPMS/*/hexdump-$(VERS)*.rpm .
+	cp $(RPMROOT)/SRPMS/hexdump-$(VERS)*.src.rpm .
