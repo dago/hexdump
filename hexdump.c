@@ -1,14 +1,14 @@
 /*****************************************************************************
 
-hex.c -- generate CP/M style hex dumps
+hexdump.c -- generate CP/M style hex dumps
 
 *****************************************************************************/
-
 
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
 #include <locale.h>
+#include <stdlib.h>
 
 #define DEFWIDTH 16		/* Default # chars to show per line */
 #define MAXWIDTH 32		/* Maximum # of bytes per line	*/
@@ -41,9 +41,8 @@ static char ebcdic[] =
 /* F0 */ '0','1','2','3','4','5','6','7','8','9','.','.','.','.','.','.',
 };
 
-static void dumpfile(f)
+static void dumpfile(FILE *f)
 /* dump a single, specified file -- stdin if filename is NULL */
-FILE	*f;
 {
     int     ch = '\0';		/* current character            */
     char    ascii[MAXWIDTH+3];	/* printable ascii data         */
@@ -139,9 +138,8 @@ FILE	*f;
 	(ch != EOF);
 }
 
-static long getoffs(cp)
+static long getoffs(char *cp)
 /* fetch decimal or hex integer to be used as file start or offset */
-char *cp;
 {
     bool foundzero = FALSE;
     long value = 0;
@@ -191,9 +189,7 @@ char *cp;
     return(value);
 }
 
-main(argc, argv)
-int argc;
-char *argv[];
+main(int argc, char **argv)
 {
     FILE    *infile;	    /* file pointer input file */
     int	    dumpcount = 0;  /* count of files dumped so far */
@@ -290,4 +286,4 @@ char *argv[];
     return(0);
 }
 
-/* hex.c ends here */
+/* hexdump.c ends here */

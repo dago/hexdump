@@ -37,6 +37,7 @@ cp hexdump.1 "$RPM_BUILD_ROOT"/usr/share/man/man1/
 
 %changelog
 * Wed Oct 20 2010 Eric S. Raymond <esr@snark.thyrsus.com> 1.7-1
+- Code fully ANSIfied.
 - License changed to BSD.
 
 * Mon Dec 29 2003 Eric S. Raymond <esr@snark.thyrsus.com> 1.6-1
