@@ -10,11 +10,14 @@ SOURCES = README COPYING Makefile hexdump.c hexdump.xml hexdump.spec
 hexdump-$(VERS).tar.gz: $(SOURCES) hexdump.1 
 	@ls $(SOURCES) hexdump.1 | sed s:^:hexdump-$(VERS)/: >MANIFEST
 	@(cd ..; ln -s hexdump hexdump-$(VERS))
-	(cd ..; tar -czvf hexdump/hexdump-$(VERS).tar.gz `cat hexdump/MANIFEST`)
+	(cd ..; tar -czf hexdump/hexdump-$(VERS).tar.gz `cat hexdump/MANIFEST`)
 	@(cd ..; rm hexdump-$(VERS))
 
 hexdump.1: hexdump.xml
 	xmlto man hexdump.xml
+
+hexdump.html: hexdump.xml
+	xmlto html-nochunks hexdump.xml
 
 install: hexdump.1 uninstall
 	cp hexdump /usr/bin
@@ -24,7 +27,7 @@ uninstall:
 	rm -f /usr/bin/hexdump /usr/share/man/man1/hexdump.
 
 clean:
-	rm -f hexdump hexdump-$(VERS).tar.gz *.rpm *.html MANIFEST SHIPPER.*
+	rm -f hexdump hexdump-$(VERS).tar.gz *.rpm *.1 *.html MANIFEST SHIPPER.*
 
 dist: hexdump-$(VERS).tar.gz
 
