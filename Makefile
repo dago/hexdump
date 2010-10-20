@@ -24,7 +24,9 @@ uninstall:
 	rm -f /usr/bin/hexdump /usr/share/man/man1/hexdump.
 
 clean:
-	rm -f hexdump hexdump-$(VERS).tar.gz *.rpm
+	rm -f hexdump hexdump-$(VERS).tar.gz *.rpm *.html MANIFEST SHIPPER.*
 
 dist: hexdump-$(VERS).tar.gz
 
+release: hexdump-$(VERS).tar.gz hexdump.html
+	shipper -u -m -t; make clean
