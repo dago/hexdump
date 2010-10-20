@@ -1,5 +1,5 @@
 Name: hexdump
-Version: 1.6
+Version: 1.7
 Release: 1
 Summary: yet another hex dumper
 URL: http://www.catb.org/~esr/hexdump/
