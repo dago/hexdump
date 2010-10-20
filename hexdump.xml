@@ -7,6 +7,9 @@
 <refentrytitle>hexdump</refentrytitle>
 <manvolnum>1</manvolnum>
 <refmiscinfo class='date'>Oct 27, 1987</refmiscinfo>
+<refmiscinfo class='source'>hexdump</refmiscinfo>
+<refmiscinfo class='product'>hexdump</refmiscinfo>
+<refmiscinfo class='manual'>Development Tools</refmiscinfo>
 </refmeta>
 <refnamediv id='name'>
 <refname>hexdump</refname>
