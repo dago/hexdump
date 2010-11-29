@@ -7,6 +7,7 @@ Source0: %{name}-%{version}.tar.gz
 License: BSD
 Group: Development/Tools
 BuildRoot: %{_tmppath}/%{name}-root
+#Destinations: freshmeat
 
 %%description 
 Yes, it's yet another hex dumper.  This one produces a nice CP/M-like
