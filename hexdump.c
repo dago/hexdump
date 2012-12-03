@@ -12,7 +12,7 @@ hexdump.c -- generate CP/M style hex dumps
 #include <stdbool.h>
 
 #define DEFWIDTH 16		/* Default # chars to show per line */
-#define MAXWIDTH 32		/* Maximum # of bytes per line	*/
+#define MAXWIDTH 128		/* Maximum # of bytes per line	*/
 
 static long	linesize = DEFWIDTH;	/* # of bytes to print per line */
 static bool	eflag = false;		/* display ebcdic if true */
