@@ -10,6 +10,8 @@ Description: Dump binary files in a CP/M like hex format.
 
 XBS-Destinations: freecode
 
+XBS-Logo: hexdump.png
+
 Homepage: http://www.catb.org/~esr/hexdump
 
 XBS-Project-Tag-List: hex, binary, dump
