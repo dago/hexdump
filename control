@@ -3,15 +3,20 @@
 
 Package: hexdump
 
-Description: Dump binary files in a CP/M like hex format.
- Yes, it's yet another hex dumper.  This one produces a nice CP/M-like
- format by default and can do EBCDIC.  It's internationalized, too.
- Has many optional formatting functions.
+Description: Dump binary files in a CP/M-like hex format.
+ Yes, it's yet another textual hex dumper for peoplebwho think od -x
+ output is ugly.  This one produces a nice CP/M-like format by default
+ and can do EBCDIC.  It's internationalized, too.  Has many optional
+ formatting functions.
 
 XBS-Destinations: freecode
 
 XBS-Logo: hexdump.png
 
 Homepage: http://www.catb.org/~esr/hexdump
+
+XBS-Gitorious-URL: https://gitorious.org/hexdump
+
+XBS-Ohloh-URL: https://www.ohloh.net/p/hexdump-curses
 
 XBS-Project-Tag-List: hex, binary, dump
