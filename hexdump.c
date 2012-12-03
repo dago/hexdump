@@ -223,14 +223,14 @@ main(int argc, char **argv)
 			*cp++ = '\0';
 		    if ((start = getoffs(*argv)) == -1L)
 		    {
-			(void) fputs("hex: start offset no good\n", stderr);
+			(void) fputs("hexdump: start offset no good\n", stderr);
 			exit(0);
 		    }
 
 		    if (cp)
 			if ((length = getoffs(cp)) == -1L)
 			{
-			    (void) fputs("hex: length no good\n", stderr);
+			    (void) fputs("hexdump: length no good\n", stderr);
 			    exit(0);
 			}
 		}
@@ -249,7 +249,7 @@ main(int argc, char **argv)
 		    argc--, argv++;
 		if ((linebytes = getoffs(*argv)) == -1L || linebytes > MAXWIDTH)
 		{
-		    (void) fputs("hex: line width no good\n", stderr);
+		    (void) fputs("hexdump: line width no good\n", stderr);
 		    exit(0);
 		}
 		if (linebytes % 2)
@@ -257,13 +257,13 @@ main(int argc, char **argv)
 	        continue;
 
 	    default:
-	        (void) fprintf(stderr, "hex: no such option as %s\n", *argv);
+	        (void) fprintf(stderr, "hexdump: no such option as %s\n", *argv);
 		exit(0);
 	    }
 	}
 	else if ((infile = fopen(*argv, "rb")) == NULL)
 	{
-	    (void) fprintf(stderr, "hex: cannot open %s\n", *argv);
+	    (void) fprintf(stderr, "hexdump: cannot open %s\n", *argv);
 	    exit(1);
 	}
 
