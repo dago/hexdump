@@ -9,18 +9,15 @@ hexdump.c -- generate CP/M style hex dumps
 #include <string.h>
 #include <locale.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #define DEFWIDTH 16		/* Default # chars to show per line */
 #define MAXWIDTH 32		/* Maximum # of bytes per line	*/
 
-typedef int bool;
-#define TRUE	1
-#define FALSE	0
-
 static long	linesize = DEFWIDTH;	/* # of bytes to print per line */
-static bool	eflag = FALSE;		/* display ebcdic if true */
-static bool	cflag = FALSE;		/* show printables as ASCII if true */
-static bool	gflag = FALSE;		/* suppress mid-page gutter if true */
+static bool	eflag = false;		/* display ebcdic if true */
+static bool	cflag = false;		/* show printables as ASCII if true */
+static bool	gflag = false;		/* suppress mid-page gutter if true */
 static long	start = 0L;		/* file offset to start dumping at */
 static long	length = 0L;		/* if nz, how many chars to dump */
 
@@ -141,14 +138,14 @@ static void dumpfile(FILE *f)
 static long getoffs(char *cp)
 /* fetch decimal or hex integer to be used as file start or offset */
 {
-    bool foundzero = FALSE;
+    bool foundzero = false;
     long value = 0;
     int base = 0;
     char *hexdigits = "0123456789abcdefABCDEF";
 
     for (; *cp; cp++)
 	if (*cp == '0')
-	    foundzero = TRUE;
+	    foundzero = true;
 	else if (isdigit(*cp))
 	{
 	    base = 10;
@@ -256,7 +253,7 @@ main(int argc, char **argv)
 		    exit(0);
 		}
 		if (linesize % 2)
-		    gflag = TRUE;
+		    gflag = true;
 	        continue;
 
 	    default:
