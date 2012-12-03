@@ -1,0 +1,27 @@
+			hexdump news
+
+1.8: 2012-12-03
+  Use C99 bools.  Code passes cppcheck audit.
+
+1.7: 2010-10-20
+  Code fully ANSIfied. License changed to BSD.  RPM spec removed.
+
+1.6: 2003-12-29
+  Source RPMs no longer depend on --define myversion
+
+1.5: 2003-12-26
+  Name changed to 'hexdump'.
+
+1.4: 2003-03-04
+  Packaging fixes.
+
+1.3: 2002-07-30
+  Documentation converted to XML-DocBook.  A Windows NT port fix.
+
+1.2: 1999-09-13
+  Added RPM spec.
+
+1.1: 1998-06-29
+  Minor string header port fix.  Archving production.
+
+Based on a 1.0 written in 1983.

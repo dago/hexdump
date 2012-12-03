@@ -1,0 +1,15 @@
+# This is not a real Debian control file
+# It's project metadata for the shipper tool
+
+Package: hexdump
+
+Description: Dump binary files in a CP/M like hex format.
+ Yes, it's yet another hex dumper.  This one produces a nice CP/M-like
+ format by default and can do EBCDIC.  It's internationalized, too.
+ Has many optional formatting functions.
+
+XBS-Destinations: freecode
+
+Homepage: http://www.catb.org/~esr/hexdump
+
+XBS-Project-Tag-List: hex, binary, dump

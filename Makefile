@@ -1,11 +1,11 @@
-# Makefile for Eric Raymond's silly hex dumper
+# Makefile for Eric Raymond's CP/M-like hex dumper
 
-VERS=$(shell sed <hexdump.spec -n -e '/Version: \(.*\)/s//\1/p')
+VERS=1.8
 
 hexdump: hexdump.c
 	$(CC) -DRELEASE=\"$(VERS)\" -O hexdump.c -o hexdump
 
-SOURCES = README COPYING Makefile hexdump.c hexdump.xml hexdump.spec
+SOURCES = README COPYING NEWS control Makefile hexdump.c hexdump.xml
 
 hexdump-$(VERS).tar.gz: $(SOURCES) hexdump.1 
 	@ls $(SOURCES) hexdump.1 | sed s:^:hexdump-$(VERS)/: >MANIFEST

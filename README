@@ -1,6 +1,10 @@
 				HEXDUMP
 		(by Eric S. Raymond <esr@thyrsus.com>)
 
+Yes, it's yet another hex dumper.  This one produces a nice CP/M-like
+format by default and can do EBCDIC.  It's internationalized, too.
+Has many useful formatting functions.
+
 This hex dumper was born because
 
 	a) od octal format is appallingly ugly
