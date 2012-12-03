@@ -11,8 +11,10 @@ hexdump.c -- generate CP/M style hex dumps
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define DEFWIDTH 16		/* Default # chars to show per line */
-#define MAXWIDTH 128		/* Maximum # of bytes per line	*/
+#define DEFWIDTH	16		/* Default # chars to show per line */
+#define MAXWIDTH	128		/* Maximum # of bytes per line	*/
+#define HEXPERBYTE	3		/* Two hex characters plus space */
+#define HEXOVERHEAD	7		/* fixed overhead per line of hex */
 
 static long	linebytes = DEFWIDTH;	/* # of bytes to print per line */
 static bool	eflag = false;		/* display ebcdic if true */
@@ -109,7 +111,7 @@ static void dumpfile(FILE *f)
 
 	    /* update counters and things */
 	    ai++;
-	    hpos += 3;
+	    hpos += HEXPERBYTE;
 	}
 
 	/* At end-of-line or EOF, show ASCII or EBCDIC version of data. */
@@ -117,7 +119,7 @@ static void dumpfile(FILE *f)
 	{
 	    if (!cflag)
 	    {
-		while (hpos < linebytes * 3 + 7)
+		while (hpos < linebytes * HEXPERBYTE + HEXOVERHEAD)
 		{
 		    hpos++;
 		    (void) putchar(' ');
