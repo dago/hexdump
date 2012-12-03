@@ -32,6 +32,10 @@ clean:
 cppcheck:
 	cppcheck --template gcc --enable=all hexdump.c
 
+test: hexdump
+	@hexdump hexdump.png | diff -u hexdump.chk -
+	@echo "No diff output is good news."
+
 dist: hexdump-$(VERS).tar.gz
 
 release: hexdump-$(VERS).tar.gz hexdump.html
