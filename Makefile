@@ -29,6 +29,9 @@ uninstall:
 clean:
 	rm -f hexdump hexdump-$(VERS).tar.gz *.rpm *.1 *.html MANIFEST SHIPPER.*
 
+cppcheck:
+	cppcheck --template gcc --enable=all hexdump.c
+
 dist: hexdump-$(VERS).tar.gz
 
 release: hexdump-$(VERS).tar.gz hexdump.html
