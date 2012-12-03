@@ -4,7 +4,7 @@
 Package: hexdump
 
 Description: Dump binary files in a CP/M-like hex format.
- Yes, it's yet another textual hex dumper for peoplebwho think od -x
+ Yes, it's yet another textual hex dumper for people who think od -x
  output is ugly.  This one produces a nice CP/M-like format by default
  and can do EBCDIC.  It's internationalized, too.  Has many optional
  formatting functions.
