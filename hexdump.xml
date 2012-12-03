@@ -31,12 +31,13 @@
 
 <refsect1 id='description'><title>DESCRIPTION</title>
 
-<para>This program provides a facility for obtaining a dump of a
-binary file to stdout.  The default format is a CP/M style
-haxadecimal dump with byte offset in file, 16 bytes of
-<command>hex</command> and 16 bytes of alpha representation with '.'
-for non-printables per line. If no filename is given, hex reads from
-standard input.</para>
+<para>This program dumps a binary file to stdout in a form friendlier
+to the eyeball than either raw binary or the output of the Unix
+<citerefentry><refentrytitle>od</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+command.  The default format is a CP/M style hexadecimal dump with
+byte offset in file, 16 bytes of <command>hex</command> and 16 bytes
+of alpha representation with '.'  for non-printables per line. If no
+filename is given, hex reads from standard input.</para>
 
 <para>The program accepts the following options to control its output:</para>
 <variablelist remap='TP'>
