@@ -14,7 +14,7 @@ hexdump.c -- generate CP/M style hex dumps
 #define DEFWIDTH 16		/* Default # chars to show per line */
 #define MAXWIDTH 128		/* Maximum # of bytes per line	*/
 
-static long	linesize = DEFWIDTH;	/* # of bytes to print per line */
+static long	linebytes = DEFWIDTH;	/* # of bytes to print per line */
 static bool	eflag = false;		/* display ebcdic if true */
 static bool	cflag = false;		/* show printables as ASCII if true */
 static bool	gflag = false;		/* suppress mid-page gutter if true */
@@ -67,16 +67,16 @@ static void dumpfile(FILE *f)
 
 	if (ch != EOF)
 	{
-	    if (i++ % linesize == 0)
+	    if (i++ % linebytes == 0)
 	    {
 		(void) printf("%04x ", offset);
-		offset += linesize;
+		offset += linebytes;
 		hpos = 5;
 	    }
 
 	    /* output one space for the mid-page gutter */
 	    if (!gflag)
-		if ((i - 1) % (linesize / 2) == 0)
+		if ((i - 1) % (linebytes / 2) == 0)
 		{
 		    (void) putchar(' ');
 		    hpos++;
@@ -113,11 +113,11 @@ static void dumpfile(FILE *f)
 	}
 
 	/* At end-of-line or EOF, show ASCII or EBCDIC version of data. */
-	if (i && (ch == EOF || (i % linesize == 0)))
+	if (i && (ch == EOF || (i % linebytes == 0)))
 	{
 	    if (!cflag)
 	    {
-		while (hpos < linesize * 3 + 7)
+		while (hpos < linebytes * 3 + 7)
 		{
 		    hpos++;
 		    (void) putchar(' ');
@@ -127,7 +127,7 @@ static void dumpfile(FILE *f)
 		(void) printf("%s", ascii);
 	    }
 
-	    if (ch != EOF || (i % linesize != 0))
+	    if (ch != EOF || (i % linebytes != 0))
 		(void) putchar('\n');
 	    ai = 0;		/* reset counters */
 	}
@@ -247,12 +247,12 @@ main(int argc, char **argv)
 		    (*argv)++;
 		else
 		    argc--, argv++;
-		if ((linesize = getoffs(*argv)) == -1L || linesize > MAXWIDTH)
+		if ((linebytes = getoffs(*argv)) == -1L || linebytes > MAXWIDTH)
 		{
 		    (void) fputs("hex: line width no good\n", stderr);
 		    exit(0);
 		}
-		if (linesize % 2)
+		if (linebytes % 2)
 		    gflag = true;
 	        continue;
 
