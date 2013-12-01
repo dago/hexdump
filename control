@@ -15,7 +15,7 @@ XBS-Logo: hexdump.png
 
 Homepage: http://www.catb.org/~esr/hexdump
 
-XBS-HTML-Template: index.html
+XBS-HTML-Target: index.html
 
 XBS-Gitorious-URL: https://gitorious.org/hexdump
 
