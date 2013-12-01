@@ -15,8 +15,12 @@ XBS-Logo: hexdump.png
 
 Homepage: http://www.catb.org/~esr/hexdump
 
+XBS-HTML-Template: index.html
+
 XBS-Gitorious-URL: https://gitorious.org/hexdump
 
 XBS-Ohloh-URL: https://www.ohloh.net/p/hexdump-curses
 
-XBS-Project-Tag-List: hex, binary, dump
+XBS-Freecode-Tags: hex, binary, dump
+
+XBS-VC-Tag-Template: %(version)s
